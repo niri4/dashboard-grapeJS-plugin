@@ -5,6 +5,8 @@
     <title>MSC Plugin</title>
     <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
     <script src="https://unpkg.com/grapesjs"></script>
+    <script src="dist/grapesjs-preset-webpage.min.css"></script>
+    <script src="dist/grapesjs-preset-webpage.min.js"></script>
     <script src="dist/msc_plugin.js"></script>
     <style>
       body,
@@ -33,9 +35,20 @@
         container: '#gjs',
         fromElement: true,
 
-        plugins: ['msc_plugin'],
+        plugins: ['msc_plugin','gjs-preset-webpage'],
         pluginsOpts: {
-          'msc_plugin': {}
+          'msc_plugin': {
+
+          },
+          'gjs-preset-webpage': {
+              blocks: ['column1', 'column2', 'column3', 'column3-7'],
+              category: false,
+              showStylesOnChange: true,
+              formsOpts:false,
+              blocksBasicOpts:false,
+              navbarOpts:false,
+              countdownOpts: false
+          }
         }
       });
       window.editor = editor;
