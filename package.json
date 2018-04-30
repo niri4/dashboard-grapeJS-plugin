@@ -1,6 +1,6 @@
 {
   "name": "msc_plugin",
-  "version": "0.1.7",
+  "version": "0.1.12",
   "description": "msc_plugin",
   "main": "dist/msc_plugin.min.js",
   "scripts": {
