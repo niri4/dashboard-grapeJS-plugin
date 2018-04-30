@@ -5,9 +5,9 @@
     <title>MSC Plugin</title>
     <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
     <script src="https://unpkg.com/grapesjs"></script>
-    <script src="dist/grapesjs-preset-webpage.min.css"></script>
+    <link href="dist/grapesjs-preset-webpage.min.css" rel="stylesheet">
     <script src="dist/grapesjs-preset-webpage.min.js"></script>
-    <script src="dist/msc_plugin.js"></script>
+    <script src="dist/msc_plugin.min.js"></script>
     <style>
       body,
       html {
@@ -19,10 +19,13 @@
   <body>
 
     <div id="gjs" style="height:0px; overflow:hidden">
-      <div style="margin:100px 100px 25px; padding:25px; font:caption">
-        This is a demo content from index.html. For the development, you shouldn't edit this file, instead you can
-        copy and rename it to _index.html, on next server start the new file will be served, and it will be ignored by git.
-      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     </div>
 
 
@@ -34,12 +37,20 @@
         storageManager: { autoload: 0 },
         container: '#gjs',
         fromElement: true,
+        allowScripts: 1,
+        canvas: {
+         scripts: [
+           'https://code.jquery.com/jquery-3.2.1.min.js',
+           'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
+         ],
+         styles: [
+           'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
+           'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
+         ]
+       },
 
         plugins: ['msc_plugin','gjs-preset-webpage'],
         pluginsOpts: {
-          'msc_plugin': {
-
-          },
           'gjs-preset-webpage': {
               blocks: ['column1', 'column2', 'column3', 'column3-7'],
               category: false,
@@ -48,7 +59,8 @@
               blocksBasicOpts:false,
               navbarOpts:false,
               countdownOpts: false
-          }
+          },
+          'msc_plugin': {},
         }
       });
       window.editor = editor;
