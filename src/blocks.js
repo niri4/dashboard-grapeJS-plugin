@@ -8,7 +8,7 @@ export default (editor, config = {}) => {
       bm.add('1_column', {
       label: '1 Column',
       content: div_col1,
-      category: 'columns',
+      category: 'Columns',
       attributes: {
             class:'fa fa-times-rectangle'
       }
@@ -19,7 +19,7 @@ export default (editor, config = {}) => {
         bm.add('6_column', {
         label: '2 Column',
         content: div_col6,
-        category: 'columns',
+        category: 'Columns',
         attributes: {
               class:'fa fa-columns'
         }
@@ -31,7 +31,7 @@ export default (editor, config = {}) => {
           bm.add('3_column', {
           label: '3 Column',
           content: div_col3,
-          category: 'columns',
+          category: 'Columns',
           attributes: {
                 class:'fa fa-columns'
           }
@@ -43,7 +43,7 @@ export default (editor, config = {}) => {
     bm.add('4_column', {
     label: '4 Column',
     content: div_col4,
-    category: 'columns',
+    category: 'Columns',
     attributes: {
       class:'fa fa-columns'
     }
@@ -56,7 +56,7 @@ export default (editor, config = {}) => {
   bm.add('2_column_4_and_8', {
   label: '2 Column 4,8',
   content: div_col2_4_and_8,
-  category: 'columns',
+  category: 'Columns',
   attributes: {
     class:'fa fa-columns'
   }
@@ -69,7 +69,7 @@ export default (editor, config = {}) => {
   bm.add('2_column_8_and_4', {
   label: '2 Column 8,4',
   content: div_col2_8_and_4,
-  category: 'columns',
+  category: 'Columns',
   attributes: {
     class:'fa fa-columns'
   }
@@ -82,7 +82,7 @@ export default (editor, config = {}) => {
   bm.add('12_columns', {
   label: '12 columns',
   content: div_col12,
-  category: 'columns',
+  category: 'Columns',
   attributes: {
     class:'fa fa-columns'
   }
@@ -177,6 +177,9 @@ function closeNav() {
 }
 </script>
 <style>
+#main1{
+  height: 100%;
+}
 
 nav-side-menu {
   overflow: auto;
@@ -339,10 +342,6 @@ body {
     transition: 0.5s;
     padding-top: 60px;
 }
-
-
-
-
 .sidenav1 .closebtn {
     position: absolute;
     top: 0;
@@ -354,6 +353,7 @@ body {
 #main1 {
     transition: margin-left .5s;
     padding: 16px;
+    pa
 }
 
 @media screen and (max-height: 450px) {
@@ -366,14 +366,13 @@ body {
   bm.add('sidebar', {
   label: 'Siderbar1',
   content: sidebar1,
-  category: 'sidebar',
+  category: 'Sidebar',
   attributes: {
     class:'fa fa-bars'
   }
   });
 
 let fixed_sidebar =`
-
 <div class="nav-side-menu">
     <div class="brand">Brand Logo</div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
@@ -440,8 +439,15 @@ let fixed_sidebar =`
             </ul>
      </div>
 </div>
-
 <div class="main1">
+<div id="page-content-wrapper1">
+      <div class="container-fluid">
+          <h1>Simple Sidebar</h1>
+          <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+          <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+          <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+      </div>
+  </div>
 </div>
 <style>
 body {
@@ -449,9 +455,10 @@ body {
     padding: 0px;
     background-color: #ebedef;
 }
-.main {
+.main1 {
     margin-left: 220px;
     padding: 15px;
+    height: 100%;
 }
 .nav-side-menu {
   overflow: auto;
@@ -601,7 +608,7 @@ body {
 bm.add('sidebar_fixed', {
 label: 'fixed sidebar',
 content: fixed_sidebar,
-category: 'sidebar',
+category: 'Sidebar',
 attributes: {
   class:'fa fa-bars'
 }
@@ -705,6 +712,7 @@ let sidebar_with_nav = `<!-- Use any element to open the sidenav -->
     </li>
   </ul>
 </div>
+<div class="main" id="main"></div>
 <style>
 .boom, .boomy {
   margin-left: -10px;
@@ -790,9 +798,10 @@ let sidebar_with_nav = `<!-- Use any element to open the sidenav -->
   animation-delay: 1.7s;
 }
 #main {
-  padding-top: 80px;
+  padding-top: 50px;
   transition: all 0.5s ease-in-out;
   margin-left: 60px;
+  height: 100%;
 }
 @media (max-width: 512px) {
   #main {
@@ -1062,7 +1071,7 @@ function closeNav() {
 bm.add('sidebar_with_nav', {
 label: 'Sidebar with navbar',
 content: sidebar_with_nav,
-category: 'sidebar',
+category: 'Sidebar',
 attributes: {
   class:'fa fa-bars'
 }
@@ -1124,11 +1133,110 @@ let navbar= `
 bm.add('navbar', {
 label: 'navbar',
 content: navbar,
-category: 'sidebar',
+category: 'Sidebar',
 attributes: {
   class:'fa fa-bars'
 }
 });
 
+// *********************************************************************** Html Components ****************************************************************
+// *********************************************************************** Haeding Tags ********************************************************************
+
+let h1 = `<h1>WRITE SOMETHING HERE</h1>`;
+bm.add('h1', {
+label: 'Heading H1 Tag',
+content: h1,
+category: 'Headings',
+attributes: {
+  class: 'gjs-fonts gjs-f-text' ,
+}
+});
+let h2 = `<h2>WRITE SOMETHING HERE</h2>`;
+bm.add('h2', {
+label: 'Heading H2 Tag',
+content: h2,
+category: 'Headings',
+attributes: {
+  class: 'gjs-fonts gjs-f-text' ,
+}
+});
+let h3 = `<h3>WRITE SOMETHING HERE</h3>`;
+bm.add('h3', {
+label: 'Heading H3 Tag',
+content: h3,
+category: 'Headings',
+attributes: {
+  class: 'gjs-fonts gjs-f-text' ,
+}
+});
+let h4 = `<h4>WRITE SOMETHING HERE</h4>`;
+bm.add('h4', {
+label: 'Heading H4 Tag',
+content: h4,
+category: 'Headings',
+attributes: {
+  class: 'gjs-fonts gjs-f-text' ,
+}
+});
+let h5 = `<h5>WRITE SOMETHING HERE></h5>`;
+bm.add('h5', {
+label: 'Heading H5 Tag',
+content: h5,
+category: 'Headings',
+attributes: {
+  class: 'gjs-fonts gjs-f-text' ,
+}
+});
+let h6 = `<h6>WRITE SOMETHING HERE</h6>`;
+bm.add('h6', {
+label: 'Heading H6 Tag',
+content: h6,
+category: 'Headings',
+attributes: {
+  class: 'gjs-fonts gjs-f-text' ,
+}
+});
+
+//********************************************************************Basic Component *******************************************************************
+let para = `<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>`;
+bm.add('para', {
+label: 'Text',
+content: para,
+category: 'Basic',
+attributes: {
+  class: 'gjs-fonts gjs-f-text',
+}
+});
+
+let quotes = `<blockquote class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ipsum dolor sit</blockquote`;
+bm.add('quotes', {
+label: 'Quotes',
+content: quotes,
+category: 'Basic',
+attributes: {
+  class: 'fa fa-quote-right',
+}
+});
+let link =`<a href= "#"><span>Link Nmae</span></a>`;
+bm.add('link', {
+   category: 'Basic',
+   label: 'Link',
+   attributes: { class: 'fa fa-link' },
+    content: link,
+ });
+ let list_with_link = '<ui><li><a href= "#"><span>Link Nmae</span></a></li></ui>';
+ bm.add('link_list', {
+    category: 'Basic',
+    label: 'Ui tag',
+    attributes: { class: 'fa fa-link' },
+     content: list_with_link,
+  });
+let hr = '<hr>';
+bm.add('hr', {
+    category: 'Basic',
+    label: 'hr',
+    attributes: { class: '	fa fa-minus' },
+    content: hr,
+});
   // ...
 }
