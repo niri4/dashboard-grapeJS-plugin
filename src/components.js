@@ -35,6 +35,8 @@ domc.addType('canvas', {
   // isComponent() method. As you're putting a new Component type on top of the stack,
   // not declaring isComponent() might probably break stuff, especially if you extend
   // the default one.
+
+  // TODO: refactor code
   {
     isComponent: function(el) {
       if(el.tagName == 'CANVAS'){
