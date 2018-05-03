@@ -8,6 +8,7 @@
     <link href="dist/grapesjs-preset-webpage.min.css" rel="stylesheet">
     <script src="dist/grapesjs-preset-webpage.min.js"></script>
     <script src="dist/msc_plugin.min.js"></script>
+    <script src="dist/Chart.min.js"></script>
     <style>
       body,
       html {
@@ -19,12 +20,17 @@
   <body>
 
     <div id="gjs" style="height:0px; overflow:hidden">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
 
     </div>
 
@@ -41,7 +47,8 @@
         canvas: {
          scripts: [
            'https://code.jquery.com/jquery-3.2.1.min.js',
-           'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
+           'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',
+           "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"
          ],
          styles: [
            'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
@@ -64,6 +71,14 @@
         }
       });
       window.editor = editor;
+      var commands = editor.Commands;
+      commands.add('myCommand', {
+        run:  function(editor, sender){
+          alert('Hello world!');
+        },
+        stop:  function(editor, sender){
+        },
+      });
     </script>
   </body>
 </html>
