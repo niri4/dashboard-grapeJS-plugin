@@ -12,6 +12,7 @@ domc.addType('canvas', {
   model: defaultModel.extend({
     // Extend default properties
     defaults: Object.assign({}, defaultModel.prototype.defaults, {
+
       // Can be dropped only inside `form` elements
       // draggable: 'div, div*',
       // // Can't drop other elements inside it
@@ -48,9 +49,10 @@ domc.addType('canvas', {
   // Define the View
   view: defaultType.view.extend({
     init() {
+
          this.listenTo(this.model, 'active', this.doStuff); // listen for active event
        },
-       doStuff() {alert(2);}
+       doStuff() {this.model.set('attributes', { id: "hfh" });}
 
 
   }),

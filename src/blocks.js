@@ -1549,10 +1549,16 @@ bm.add('button', {
 
 
 // *************************************************************************************graphs***********************************************************************************************************************************
+
 let line_graphs =`
 <canvas id="myChart" width="400" height="400"></canvas>
 <script>
-var ctx = document.getElementById("myChart").getContext('2d');
+
+var gdgd = document.getElementsByTagName("canvas");
+var inputList = Array.prototype.slice.call(gdgd);
+var go = "block_chart".concat(inputList.length);
+inputList[inputList.length -1].setAttribute("id", go);
+var ctx = document.getElementById(go).getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -1589,6 +1595,7 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+
 </script>`;
 
 bm.add('line_graph', {
