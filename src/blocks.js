@@ -3,7 +3,12 @@ export default (editor, config = {}) => {
 
 // **************************************************Column*************************************************************
   let div_col1 =  `
-  <div class="row"><div class="col-md-12" style="height: 20%"></div></div>
+  <style>
+  .intial_height{
+      height: 20%;
+  }
+  </style>
+  <div class="row"><div class="col-md-12 intial_height"></div></div>
     `;
       bm.add('1_column', {
       label: '1 Column',
@@ -14,7 +19,12 @@ export default (editor, config = {}) => {
       }
     });
     let div_col6 =  `
-    <div class="row"><div class="col-md-6" style="height: 20%"></div><div class="col-md-6" style="height: 20%"></div></div>
+    <style>
+    .intial_height{
+        height: 20%;
+    }
+    </style>
+    <div class="row"><div class="col-md-6 intial_height"</div><div class="col-md-6 intial_height"></div></div>
       `;
         bm.add('6_column', {
         label: '2 Column',
@@ -25,7 +35,12 @@ export default (editor, config = {}) => {
         }
       });
       let div_col3 =  `
-      <div class="row"><div class="col-md-4" style="height: 20%"></div><div class="col-md-4" style="height: 20%"></div><div class="col-md-4" style="height: 20%"></div></div>
+      <style>
+      .intial_height{
+          height: 20%;
+      }
+      </style>
+      <div class="row"><div class="col-md-4 intial_height"></div><div class="col-md-4 intial_height" ></div><div class="col-md-4 intial_height"></div></div>
         `;
 
           bm.add('3_column', {
@@ -37,7 +52,12 @@ export default (editor, config = {}) => {
           }
         });
     let div_col4 =  `
-      <div class="row"><div class="col-md-3" style="height: 20%"></div><div class="col-md-3" style="height: 20%"></div><div class="col-md-3" style="height: 20%"></div><div class="col-md-3" style="height: 20%"></div></div>
+    <style>
+    .intial_height{
+        height: 20%;
+    }
+    </style>
+      <div class="row"><div class="col-md-3 intial_height" ></div><div class="col-md-3 intial_height"></div><div class="col-md-3 intial_height"></div><div class="col-md-3 intial_height"></div></div>
     `;
 
     bm.add('4_column', {
@@ -50,7 +70,12 @@ export default (editor, config = {}) => {
   });
 
   let div_col2_4_and_8 =  `
-    <div class="row"><div class="col-md-4" style="height: 20%"></div><div class="col-md-8" style="height: 20%"></div></div>
+  <style>
+  .intial_height{
+      height: 20%;
+  }
+  </style>
+    <div class="row"><div class="col-md-4 intial_height"></div><div class="col-md-8 intial_height"></div></div>
   `;
 
   bm.add('2_column_4_and_8', {
@@ -63,7 +88,12 @@ export default (editor, config = {}) => {
 });
 
   let div_col2_8_and_4 =  `
-    <div class="row"><div class="col-md-8" style="height: 20%"></div><div class="col-md-4" style="height: 20%"></div></div>
+  <style>
+  .intial_height{
+      height: 20%;
+  }
+  </style>
+    <div class="row"><div class="col-md-8 intial_height" ></div><div class="col-md-4 intial_height"></div></div>
   `;
 
   bm.add('2_column_8_and_4', {
@@ -76,7 +106,12 @@ export default (editor, config = {}) => {
   });
 
   let div_col12=  `
-    <div class="row"><div class="col-md-1" style="height: 20%"></div><div class="col-md-1" style="height: 20%"></div><div class="col-md-1" style="height: 20%"></div><div class="col-md-1" style="height: 20%"></div><div class="col-md-1" style="height: 20%"></div><div class="col-md-1" style="height: 20%"></div><div class="col-md-1" style="height: 20%"></div><div class="col-md-1" style="height: 20%"></div><div class="col-md-1" style="height: 20%"></div><div class="col-md-1" style="height: 20%"></div><div class="col-md-1" style="height: 20%"></div><div class="col-md-1" style="height: 20%"></div></div>
+  <style>
+  .intial_height{
+      height: 20%;
+  }
+  </style>
+    <div class="row"><div class="col-md-1 intial_height"></div><div class="col-md-1 intial_height"></div><div class="col-md-1 intial_height"></div><div class="col-md-1 intial_height" ></div><div class="col-md-1 intial_height"></div><div class="col-md-1 intial_height" ></div><div class="col-md-1 intial_height" ></div><div class="col-md-1 intial_height" ></div><div class="col-md-1 intial_height" ></div><div class="col-md-1 intial_height" ></div><div class="col-md-1 intial_height" ></div><div class="col-md-1 intial_height" ></div></div>
   `;
 
   bm.add('12_columns', {
@@ -1550,17 +1585,17 @@ bm.add('button', {
 
 // *************************************************************************************graphs***********************************************************************************************************************************
 
-let line_graphs =`
+let column_graphs =`
 <canvas id="myChart" width="400" height="400"></canvas>
 <script>
 
 var gdgd = document.getElementsByTagName("canvas");
 var inputList = Array.prototype.slice.call(gdgd);
-var go = "block_chart".concat(inputList.length);
+var go = "column_chart".concat(inputList.length);
 inputList[inputList.length -1].setAttribute("id", go);
 var ctx = document.getElementById(go).getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'horizontalBar',
     data: {
         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
         datasets: [{
@@ -1598,24 +1633,391 @@ var myChart = new Chart(ctx, {
 
 </script>`;
 
-bm.add('line_graph', {
-    category: 'Graphs',
-    label: `line_graph`,
+bm.add('column_graph', {
+    category: 'Charts',
+    label: 'Column Chart',
     attributes: { class: 'btn' },
     content: {
     type: 'canvas',
     activeOnRender: 1,
-    components: line_graphs // <- this will trigger the active event
+    components: column_graphs // <- this will trigger the active event
  },
-    command: 'myCommand'
 });
 
-// commands.add('myCommand', {
-//   run:  function(editor, sender){
-//     alert('Hello world!');
-//   },
-//   stop:  function(editor, sender){
-//   },
-// });
-  // ...
+let line_chart = `<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+
+var gdgd = document.getElementsByTagName("canvas");
+var inputList = Array.prototype.slice.call(gdgd);
+var go = "line_chart".concat(inputList.length);
+inputList[inputList.length -1].setAttribute("id", go);
+var ctx = document.getElementById(go).getContext('2d');
+
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+var speedData = {
+  labels: ["0s", "10s", "20s", "30s", "40s", "50s", "60s"],
+  datasets: [{
+    label: "Car Speed (mph)",
+    data: [0, 59, 75, 20, 20, 55, 40],
+    lineTension: 0,
+    fill: false,
+    borderColor: 'orange',
+    backgroundColor: 'transparent',
+    borderDash: [5, 5],
+    pointBorderColor: 'orange',
+    pointBackgroundColor: 'rgba(255,150,0,0.5)',
+    pointRadius: 5,
+    pointHoverRadius: 10,
+    pointHitRadius: 30,
+    pointBorderWidth: 2,
+    pointStyle: 'rectRounded'
+  }]
+};
+
+var chartOptions = {
+  legend: {
+    display: true,
+    position: 'top',
+    labels: {
+      boxWidth: 80,
+      fontColor: 'black'
+    }
+  }
+};
+
+var lineChart = new Chart(ctx, {
+  type: 'line',
+  data: speedData,
+  options: chartOptions
+});
+</script>`;
+bm.add('line_chart', {
+    category: 'Charts',
+    label: 'Line Dotted Chart',
+    attributes: { class: 'btn' },
+    content: {
+    type: 'canvas',
+    activeOnRender: 1,
+    components: line_chart // <- this will trigger the active event
+ },
+});
+
+
+let line_more_one_line_chart = `<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+
+var gdgd = document.getElementsByTagName("canvas");
+var inputList = Array.prototype.slice.call(gdgd);
+var go = "line_more_one_line_chart".concat(inputList.length);
+inputList[inputList.length -1].setAttribute("id", go);
+var ctx = document.getElementById(go).getContext('2d');
+
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+var dataFirst = {
+    label: "Car A - Speed (mph)",
+    data: [0, 59, 75, 20, 20, 55, 40],
+    lineTension: 0.3,
+    fill: false,
+    borderColor: 'red',
+    backgroundColor: 'transparent',
+    pointBorderColor: 'red',
+    pointBackgroundColor: 'lightgreen',
+    pointRadius: 5,
+    pointHoverRadius: 15,
+    pointHitRadius: 30,
+    pointBorderWidth: 2,
+    pointStyle: 'rect'
+  };
+
+var dataSecond = {
+    label: "Car B - Speed (mph)",
+    data: [20, 15, 60, 60, 65, 30, 70],
+    lineTension: 0.3,
+    fill: false,
+    borderColor: 'purple',
+    backgroundColor: 'transparent',
+    pointBorderColor: 'purple',
+    pointBackgroundColor: 'lightgreen',
+    pointRadius: 5,
+    pointHoverRadius: 15,
+    pointHitRadius: 30,
+    pointBorderWidth: 2
+  };
+
+var speedData = {
+  labels: ["0s", "10s", "20s", "30s", "40s", "50s", "60s"],
+  datasets: [dataFirst, dataSecond]
+};
+
+var chartOptions = {
+  legend: {
+    display: true,
+    position: 'top',
+    labels: {
+      boxWidth: 80,
+      fontColor: 'black'
+    }
+  }
+};
+
+var lineChart = new Chart(ctx, {
+  type: 'line',
+  data: speedData,
+  options: chartOptions
+});
+</script>`;
+bm.add('line_more_one_line_chart', {
+    category: 'Charts',
+    label: 'Line Chart',
+    attributes: { class: 'btn' },
+    content: {
+    type: 'canvas',
+    activeOnRender: 1,
+    components: line_more_one_line_chart // <- this will trigger the active event
+ },
+});
+
+
+let bar_chart = `<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+
+var gdgd = document.getElementsByTagName("canvas");
+var inputList = Array.prototype.slice.call(gdgd);
+var go = "bar_chart".concat(inputList.length);
+inputList[inputList.length -1].setAttribute("id", go);
+var ctx = document.getElementById(go).getContext('2d');
+
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+var densityData = {
+  label: 'Density of Planets (kg/m3)',
+  data: [5427, 5243, 5514, 3933, 1326, 687, 1271, 1638]
+
+};
+
+var densityData1 = {
+  label: 'Densiscacty of Planets (kg/m3)',
+  data: [5427, 5234, 5541, 3332, 1326, 687, 1271, 1638],
+  backgroundColor: 'skyblue'
+};
+
+var barChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"],
+    datasets: [densityData,densityData1]
+  }
+});
+
+
+</script>`;
+bm.add('bar_chart', {
+    category: 'Charts',
+    label: 'Bar Chart',
+    attributes: { class: 'btn' },
+    content: {
+    type: 'canvas',
+    activeOnRender: 1,
+    components: bar_chart // <- this will trigger the active event
+ },
+});
+
+
+let area_chart = `<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+var gdgd = document.getElementsByTagName("canvas");
+var inputList = Array.prototype.slice.call(gdgd);
+var go = "area_chart".concat(inputList.length);
+inputList[inputList.length -1].setAttribute("id", go);
+var ctx = document.getElementById(go).getContext('2d');
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+var speedData = {
+  labels: ["0s", "10s", "20s", "30s", "40s", "50s", "60s"],
+  datasets: [{
+    label: "Car Speed (mph)",
+    data: [0, 59, 75, 20, 20, 55, 40],
+  }]
+};
+var chartOptions = {
+  legend: {
+    display: true,
+    position: 'top',
+    labels: {
+      boxWidth: 80,
+      fontColor: 'black'
+    }
+  }
+};
+
+var lineChart = new Chart(ctx, {
+  type: 'line',
+  data: speedData,
+  options: chartOptions
+});
+</script>`;
+bm.add('area_chart', {
+    category: 'Charts',
+    label: 'Area Chart',
+    attributes: { class: 'btn' },
+    content: {
+    type: 'canvas',
+    activeOnRender: 1,
+    components: area_chart // <- this will trigger the active event
+ },
+});
+
+let pie_chart = `<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+var gdgd = document.getElementsByTagName("canvas");
+var inputList = Array.prototype.slice.call(gdgd);
+var go = "pie".concat(inputList.length);
+inputList[inputList.length -1].setAttribute("id", go);
+var ctx = document.getElementById(go).getContext('2d');
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+var pieChart = new Chart(ctx,{
+    type: 'pie',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      datasets: [{
+        label: "Population (millions)",
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+        data: [2478,5267,734,784,433]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+
+
+</script>`;
+bm.add('pie_chart', {
+    category: 'Charts',
+    label: 'Pie Chart',
+    attributes: { class: 'btn' },
+    content: {
+    type: 'canvas',
+    activeOnRender: 1,
+    components: pie_chart // <- this will trigger the active event
+ },
+});
+
+let doughnut_chart = `<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+var gdgd = document.getElementsByTagName("canvas");
+var inputList = Array.prototype.slice.call(gdgd);
+var go = "doughnut-chart".concat(inputList.length);
+inputList[inputList.length -1].setAttribute("id", go);
+var ctx = document.getElementById(go).getContext('2d');
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+var doughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+
+</script>`;
+bm.add('doughnut_chart', {
+    category: 'Charts',
+    label: 'Doughnut Chart',
+    attributes: { class: 'btn' },
+    content: {
+    type: 'canvas',
+    activeOnRender: 1,
+    components: doughnut_chart // <- this will trigger the active event
+ },
+});
+
+
+let sactter_chart = `<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+var gdgd = document.getElementsByTagName("canvas");
+var inputList = Array.prototype.slice.call(gdgd);
+var go = "scatter_chart".concat(inputList.length);
+inputList[inputList.length -1].setAttribute("id", go);
+var ctx = document.getElementById(go).getContext('2d');
+
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+var popData = {
+  datasets: [{
+    label: ['Deer Population'],
+    data: [{
+      x: 100,
+      y: 0,
+      r: 10
+    }, {
+      x: 60,
+      y: 30,
+      r: 20
+    }, {
+      x: 40,
+      y: 60,
+      r: 25
+    }, {
+      x: 80,
+      y: 80,
+      r: 50
+    }, {
+      x: 20,
+      y: 30,
+      r: 25
+    }, {
+      x: 0,
+      y: 100,
+      r: 5
+    }],
+    backgroundColor: "#9966FF",
+    hoverBackgroundColor: "#000000",
+    hoverBorderColor: "#9966FF",
+    hoverBorderWidth: 1,
+    hoverRadius: 1
+  }]
+};
+
+var bubbleChart = new Chart(ctx, {
+  type: 'bubble',
+  data: popData
+});
+</script>`;
+bm.add('scatter_chart', {
+    category: 'Charts',
+    label: 'Scatter Chart',
+    attributes: { class: 'btn' },
+    content: {
+    type: 'canvas',
+    activeOnRender: 1,
+    components: sactter_chart // <- this will trigger the active event
+ },
+});
+
+
 }
