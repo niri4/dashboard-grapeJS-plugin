@@ -1621,6 +1621,7 @@ var myChart = new Chart(ctx, {
         }]
     },
     options: {
+        maintainAspectRatio: false,
         scales: {
             yAxes: [{
                 ticks: {
@@ -1677,6 +1678,7 @@ var speedData = {
 };
 
 var chartOptions = {
+    maintainAspectRatio: false,
   legend: {
     display: true,
     position: 'top',
@@ -1754,6 +1756,7 @@ var speedData = {
 };
 
 var chartOptions = {
+    maintainAspectRatio: false,
   legend: {
     display: true,
     position: 'top',
@@ -1811,6 +1814,10 @@ var barChart = new Chart(ctx, {
   data: {
     labels: ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"],
     datasets: [densityData,densityData1]
+  },
+  options: {
+      maintainAspectRatio: false,
+
   }
 });
 
@@ -1845,6 +1852,7 @@ var speedData = {
   }]
 };
 var chartOptions = {
+  maintainAspectRatio: false,
   legend: {
     display: true,
     position: 'top',
@@ -1893,6 +1901,7 @@ var pieChart = new Chart(ctx,{
       }]
     },
     options: {
+      maintainAspectRatio: false,
       title: {
         display: true,
         text: 'Predicted world population (millions) in 2050'
@@ -1936,6 +1945,7 @@ var doughnutChart = new Chart(ctx, {
       ]
     },
     options: {
+      maintainAspectRatio: false,
       title: {
         display: true,
         text: 'Predicted world population (millions) in 2050'
@@ -2005,7 +2015,10 @@ var popData = {
 
 var bubbleChart = new Chart(ctx, {
   type: 'bubble',
-  data: popData
+  data: popData,
+  options: {
+    maintainAspectRatio: false,
+  }
 });
 </script>`;
 bm.add('scatter_chart', {
